@@ -1,13 +1,25 @@
-// https://docs.angularjs.org/api/ng/service/$http#get
-function controllerDomains($scope, $http){
-  //define domains is array
-  $scope.domains = Array();
-  //https://docs.angularjs.org/api/ng/service/$http#get
+var domains = angular.module('controllerDomains', ['ngRoute']);
+
+// index
+domains.controller('domainsList', function($scope, $http) {
   $http.get("domains.json").success(function(data){
-    //define $scope.domains with value to data.domains returned
     $scope.domains = data.domains;
   }).error(function(data){
-    //if on error, show on console.log
     console.log("Error...");
   });
-}
+});
+
+// show
+domains.controller('showDomain', function($scope, $routeParams){
+  $scope.name = "showDomain";
+  $scope.params = $routeParams;
+})
+
+// routes
+domains.config(function($routeProvider, $locationProvider){
+  $routeProvider.when('/show/:id', {
+    templateUrl: 'show.html',
+    controller: 'showDomain'
+  });
+  $locationProvider.html5Mode(true);
+});
