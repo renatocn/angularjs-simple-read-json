@@ -1,0 +1,31 @@
+  <div ng-include src="'partials/pre-panel.html'"></div>
+  <main class="ls-main" ng-controller="showDomain">
+    <div class="container-fluid">
+      <h1 class="ls-title-intro ls-ico-globe">Servidores de DNS</h1>
+      <p>Os servidores de DNS são responsáveis por responder as requisições de acesso ao seu domínio.</p>
+
+      {{test}}
+      <div class="ls-box">
+        <table class="ls-table ls-table-striped">
+          <tbody>
+            <tr>
+              <td><strong>Primário (Master): </strong>ns1.systemintegration.locaweb.com</td>
+            </tr>
+            <tr>
+              <td><strong>Secundário (Slave 1): </strong>ns2.systemintegration.locaweb.com</td>
+            </tr>
+            <tr>
+              <td><strong>Terciário (Slave 2): </strong><em>Opcional</em></td>
+            </tr>
+          </tbody>
+        </table>
+        <a class="ls-btn-primary ls-btn-sm" href="/locawebstyle/documentacao/exemplos/painel3/nameservers/edit">Alterar servidores</a>
+      </div>
+      <div class="ls-box">
+        <h2 class="ls-title-3">Zona de DNS</h2>
+        <p>Zona de DNS é a área onde você cria e edita entradas de DNS para configurar servidores de e-mail, endereços de apontamento, etc.</p>
+        <a class="ls-btn-primary ls-btn-sm" href="http://painel-dns.registro.devintegration.locaweb.com.br/dns_zones/teste-contato-dominio-01.com/dns_entries">Consulte e altere zona de DNS</a>
+      </div>
+    </div>
+
+  </main>

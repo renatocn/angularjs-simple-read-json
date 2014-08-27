@@ -10,16 +10,17 @@ domains.controller('domainsList', function($scope, $http) {
 });
 
 // show
-domains.controller('showDomain', function($scope, $routeParams){
-  $scope.name = "showDomain";
-  $scope.params = $routeParams;
+domains.controller('showDomain', function($scope){
+  $scope.test = 'teste';
 })
 
 // routes
-domains.config(function($routeProvider, $locationProvider){
+domains.config(function($routeProvider){
+  $routeProvider.when('/', {
+    templateUrl: 'pages/index.html'
+  });
   $routeProvider.when('/show/:id', {
-    templateUrl: 'show.html',
+    templateUrl: 'pages/show.html',
     controller: 'showDomain'
   });
-  $locationProvider.html5Mode(true);
 });

@@ -14,42 +14,7 @@
   <script type="text/javascript" src="javascript/controllerDomains.js"></script>
 </head>
 <body>
-
-  <div class="ls-topbar">
-    <span class="ls-show-sidebar ls-ico-menu"></span>
-  </div>
-
-
-  <aside class="ls-sidebar">
-    <h1 class="ls-brand-name ls-ico-earth"><a href="../home">Registro de Domínio</a></h1>
-  </aside>
-
-  <main class="ls-main ">
-    <div class="container-fluid">
-      <h1 ng-show="domains.length>0" class="ls-title-intro ls-ico-list2">Registros</h1>
-
-      <div ng-controller="domainsList">
-        <div class="ls-list" ng-if="domain.id != false" ng-repeat="domain in domains">
-          <header class="ls-list-header">
-            <div class="ls-list-title col-sm-9">
-              <a href="show.html?id={{domain.provisioning_id}}">{{domain.id}} <span class="ls-tag-danger">{{domain.system_status}}</span></a>
-              <small>Expira em: <strong>{{domain.provisioning_id}}</strong></small>
-            </div>
-          </header>
-          <div class="ls-list-content ">
-            <div class="col-xs-12 col-md-6">
-              {{domain.service_key}}
-            </div>
-            <div class="col-xs-12 col-md-6">
-              <strong class="ls-list-label">Status</strong>
-              {{domain.system_status}}
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </main>
-
+  <div ng-include src="'partials/pre-panel.html'"></div>
+  <div ng-view></div>
 </body>
 </html>
